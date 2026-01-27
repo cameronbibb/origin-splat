@@ -4,7 +4,7 @@ const mongoose = require('mongoose');
 
 const { Schema } = mongoose;
 
-const HttpError = require('../helpers');
+const { HttpError } = require('../helpers');
 
 const requestSchema = new Schema({
   payload: { type: Object },
