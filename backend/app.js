@@ -36,7 +36,7 @@ app.use('/api/bins', binRoutes);
 app.use('/api/endpoints', endpointRoutes);
 
 app.use((error, req, res, next) => {
-  if (res.headerSent) {
+  if (res.headersSent) {
     return next(error);
   }
   res.status(error.code);
