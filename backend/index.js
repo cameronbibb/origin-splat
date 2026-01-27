@@ -1,7 +1,7 @@
 /* eslint-disable no-console */
+require('dotenv').config();
 const mongoose = require('mongoose');
 const httpServer = require('./app');
-require('dotenv').config();
 
 console.log('MONGODB_CONNECTION_STRING:', process.env.MONGODB_CONNECTION_STRING);
 
