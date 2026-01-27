@@ -4,11 +4,12 @@ const mongoose = require('mongoose');
 
 const { Schema } = mongoose;
 
+const HttpError = require('../helpers');
+
 const requestSchema = new Schema({
   payload: { type: Object },
 });
 
-//  Configures how Mongoose converts a document into plain JSON. Only runs when .toJSON() is called.
 requestSchema.set('toJSON', {
   transform: (document, returnedObject) => {
     returnedObject.id = returnedObject._id.toString();
@@ -20,7 +21,11 @@ requestSchema.set('toJSON', {
 const Request = mongoose.model('Request', requestSchema);
 
 async function deleteRequest(mongoId) {
-  await Request.findByIdAndDelete(mongoId);
+  try {
+    await Request.findByIdAndDelete(mongoId);
+  } catch (err) {
+    throw new HttpError(`Error: ${err}`, 500);
+  }
 }
 
 async function createRequest(payload) {
@@ -28,16 +33,24 @@ async function createRequest(payload) {
     payload,
   });
 
-  const result = await newRequest.save();
-  return result.toJSON();
+  try {
+    const result = await newRequest.save();
+    return result.toJSON();
+  } catch (err) {
+    throw new HttpError(`Error: ${err}`, 500);
+  }
 }
 
 async function getRequest(id) {
-  const result = await Request.findById(id);
-  if (result != null) {
-    return result.toJSON();
+  try {
+    const result = await Request.findById(id);
+    if (result != null) {
+      return result.toJSON();
+    }
+    return result;
+  } catch (err) {
+    throw new HttpError(`Error: ${err}`, 500);
   }
-  return result;
 }
 
 module.exports = {
