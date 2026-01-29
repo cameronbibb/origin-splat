@@ -21,6 +21,10 @@ io.on('connection', (socket) => {
   socket.on('joinBinRoom', (binPath) => {
     socket.join(binPath);
   });
+
+  socket.on('leaveBinRoom', (binPath) => {
+    socket.leave(binPath);
+  });
 });
 
 app.set('socketio', io);

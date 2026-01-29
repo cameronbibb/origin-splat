@@ -43,10 +43,11 @@ async function getBinId(binPath) {
 }
 
 async function createRequest(binId, mongoId, httpMethod, httpPath) {
-  const text = 'INSERT INTO requests (bin_id, mongo_id, http_method, http_path) VALUES ($1, $2, $3, $4)';
+  const text = 'INSERT INTO requests (bin_id, mongo_id, http_method, http_path) VALUES ($1, $2, $3, $4) RETURNING *';
   const value = [binId, mongoId, httpMethod, httpPath];
   try {
-    await pool.query(text, value);
+    const result = await pool.query(text, value);
+    return result.rows[0];
   } catch (err) {
     throw new HttpError(`Error: ${err.message}`);
   }
