@@ -1,5 +1,6 @@
 import { useNavigate } from "react-router-dom";
 import helpers from "../services";
+import logo from "../assets/origin_logo.svg";
 import "./Home.css";
 
 const Home = () => {
@@ -13,7 +14,7 @@ const Home = () => {
   return (
     <>
       <div className="home-page">
-        <h1>ORIGIN*</h1>
+        <img src={logo} alt="Origin*" className="logo" />
         <button className="copy_style" onClick={newBinHandler}>
           Create a bin
         </button>

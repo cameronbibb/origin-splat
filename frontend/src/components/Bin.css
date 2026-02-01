@@ -1,0 +1,6 @@
+.bin_container {
+  width: 65%;
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+}

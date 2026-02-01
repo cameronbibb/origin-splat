@@ -5,6 +5,7 @@ import { useState, useEffect } from "react";
 import helpers from "../services";
 import RequestList from "./RequestList";
 import RequestDetails from "./RequestDetails";
+import "./Bin.css";
 
 const Bin = () => {
   const { bin_path } = useParams();
@@ -35,7 +36,7 @@ const Bin = () => {
   return (
     <div>
       <EndpointHeader binPath={bin_path} />
-      <div className="container">
+      <div className="bin_container">
         <RequestList
           requests={requestList}
           setSelectedRequest={setSelectedRequest}

@@ -1,5 +1,15 @@
 .home-page {
-  margin-top: 10%;
   display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 20px;
+  min-height: 100vh;
   justify-content: center;
+}
+
+.logo {
+  width: 80%;
+  max-width: 800px;
+  height: auto;
+  margin-bottom: 30px;
 }
