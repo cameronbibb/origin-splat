@@ -1,4 +1,4 @@
-.copy_style {
+button {
   width: 100px;
   background-color: #656565;
   color: white;
@@ -8,7 +8,7 @@
   align-content: center;
 }
 
-.copy_style:hover {
+button:hover {
   background-color: #707070;
   color: white;
 }

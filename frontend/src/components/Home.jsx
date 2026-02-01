@@ -15,9 +15,7 @@ const Home = () => {
     <>
       <div className="home-page">
         <img src={logo} alt="Origin*" className="logo" />
-        <button className="copy_style" onClick={newBinHandler}>
-          Create a bin
-        </button>
+        <button onClick={newBinHandler}>Create a bin</button>
       </div>
     </>
   );
