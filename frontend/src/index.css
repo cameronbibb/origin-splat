@@ -5,13 +5,12 @@
   --text-color: #213547;
   --bg-color: #ffffff;
 
-font-family: Inter, system-ui, sans-serif;
+  font-family: Inter, system-ui, sans-serif;
   line-height: 1.5;
 
   font-synthesis: none;
   text-rendering: optimizeLegibility;
 
-/* what do these do? */
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
 }
@@ -19,6 +18,10 @@ font-family: Inter, system-ui, sans-serif;
 /* === Reset === */
 *, *::before, *::after {
   box-sizing: border-box;
+}
+
+button, input, select, textarea {
+  font: inherit;
 }
 
 body {

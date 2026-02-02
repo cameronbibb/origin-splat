@@ -1,14 +1,18 @@
 button {
-  width: 100px;
-  background-color: #656565;
-  color: white;
-  padding: 10px;
+  /* width: 100px; */
+  background-color: transparent;
+  color: var(--primary-color);
+  padding: 10px 20px;
   margin-top: 5px;
-  border-radius: 5px;
+  border-radius: 10px;
   align-content: center;
+  border-width: 1px;
+  border-color: var(--primary-color);
+  cursor: pointer;
 }
 
 button:hover {
-  background-color: #707070;
+  background-color: var(--primary-color);
   color: white;
+  font-weight: bold;
 }

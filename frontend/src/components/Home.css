@@ -11,5 +11,39 @@
   width: 80%;
   max-width: 800px;
   height: auto;
-  margin-bottom: 30px;
+  margin-bottom: 10px;
+}
+
+.info-box {
+  width: 80%;
+  max-width: 800px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  font-weight: 600;
+  color: rgb(73, 73, 73);
+  margin-bottom: 60px;
+}
+
+.create-btn {
+  position: relative;
+}
+
+.create-btn:hover {
+  color: transparent;  /* hides original text */
+}
+
+.create-btn::after {
+  content: '';
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -40%);
+}
+
+.create-btn:hover::after {
+  content: '****';
+  color: white;
+  font-size: 3rem;
 }

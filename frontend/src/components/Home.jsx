@@ -15,7 +15,12 @@ const Home = () => {
     <>
       <div className="home-page">
         <img src={logo} alt="Origin*" className="logo" />
-        <button onClick={newBinHandler}>Create a bin</button>
+        <p className="info-box">
+          Create a HTTP request bin. Capture your requests. View the data.
+        </p>
+        <button className="create-btn" onClick={newBinHandler}>
+          create a bin
+        </button>
       </div>
     </>
   );
