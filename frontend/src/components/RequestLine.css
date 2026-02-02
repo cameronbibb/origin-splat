@@ -1,14 +1,21 @@
 .request_line{
   min-width: 250px;
-  background-color: #656565;
+  background-color: var(--primary-color);
   color: white;
   padding: 10px;
   margin-top: 5px;
   border-radius: 5px;
   align-content: center;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
 }
 
 .request_line:hover {
-  background-color: #707070;
+  background-color: #6a2491;
   color: white;
+}
+
+.request_line_time {
+  font-weight:600;
 }
