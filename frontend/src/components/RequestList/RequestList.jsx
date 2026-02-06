@@ -1,4 +1,4 @@
-import RequestLine from "./RequestLine";
+import RequestLine from "../RequestLine/RequestLine";
 import "./RequestList.css";
 
 const RequestList = ({ requests, setSelectedRequest }) => {

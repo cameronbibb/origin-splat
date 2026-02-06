@@ -1,10 +1,10 @@
-import { socket } from "../socket";
-import EndpointHeader from "./EndpointHeader";
+import { socket } from "../../socket";
+import EndpointHeader from "../EndpointHeader/EndpointHeader";
 import { useParams } from "react-router-dom";
 import { useState, useEffect } from "react";
-import helpers from "../services";
-import RequestList from "./RequestList";
-import RequestDetails from "./RequestDetails";
+import helpers from "../../services";
+import RequestList from "../RequestList/RequestList";
+import RequestDetails from "../RequestDetails/RequestDetails";
 import "./Bin.css";
 
 const Bin = () => {

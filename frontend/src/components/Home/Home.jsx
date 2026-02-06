@@ -1,6 +1,6 @@
 import { useNavigate } from "react-router-dom";
-import helpers from "../services";
-import logo from "../assets/origin_logo.svg";
+import helpers from "../../services";
+import logo from "../../assets/origin_logo.svg";
 import "./Home.css";
 
 const Home = () => {

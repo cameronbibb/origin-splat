@@ -1,5 +1,5 @@
-import HeadersAndQuery from "./HeadersAndQuery";
-import SharedDetails from "./SharedDetails";
+import HeadersAndQuery from "../HeadersAndQuery/HeadersAndQuery";
+import SharedDetails from "../SharedDetails/SharedDetails";
 import "./RequestDetails.css";
 
 const RequestDetails = ({ request }) => {

@@ -1,4 +1,4 @@
-import helpers from '../services'
+import helpers from '../../services'
 
 const SharedDetails = ({request}) => {
   return (
