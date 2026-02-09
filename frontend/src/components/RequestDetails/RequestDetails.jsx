@@ -15,7 +15,7 @@ Body component (if exists)
 */
 
   return (
-    <div className="request-details">
+    <div className="request-details-container">
       <SharedDetails request={request} />
       <HeadersAndQuery type={"Headers"} obj={request.payload.headers} />
       {request.payload.query && (
