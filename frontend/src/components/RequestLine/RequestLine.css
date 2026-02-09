@@ -1,21 +1,51 @@
-.request_line{
-  min-width: 250px;
-  background-color: var(--primary-color);
-  color: white;
-  padding: 10px;
-  margin-top: 5px;
-  border-radius: 5px;
-  align-content: center;
+.request_line {
+  min-height: 50px;
+  padding: 0 10px 0 10px;
+  border-bottom: 1px solid rgb(230, 230, 230);
   display: flex;
-  justify-content: space-between;
-  align-items: center;
+  align-items: stretch;
+  text-decoration: none;
 }
 
 .request_line:hover {
-  background-color: #6a2491;
-  color: white;
+  background-color: #F3EAF8;
+  font-weight:400;
 }
 
 .request_line_time {
-  font-weight:600;
+  min-width: 90px;
+  font-size: 12px;
+  font-weight:800;
+  color: rgb(150, 150, 150);
+  border-right: 1px solid rgb(240, 239, 239);
+  padding-right: 10px;
+  margin-right: 10px;
+  display: flex;
+  align-items: center;
+  justify-content: right;
 }
+
+.request_line_method {
+  min-width: 50px;
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+  font-weight: 600;
+  font-size: 14px;
+}
+
+.request_line_path {
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+  padding-left: 20px;
+  font-weight: 600;
+  font-size: 14px;
+  color: black;
+}
+
+.method-get { color: #16a34a; }
+.method-post { color: #2563eb; }
+.method-delete { color: #dc2626; }
+.method-put { color: #ca8a04; }
+.method-patch { color: #9333ea; }

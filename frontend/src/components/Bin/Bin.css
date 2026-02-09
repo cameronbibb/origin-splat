@@ -1,3 +1,9 @@
+.bin_page {
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+}
+
 .banner {
   height: 40px;
   width: 100%;
@@ -12,8 +18,9 @@
 }
 
 .bin_container {
-  width: 100%;
+  flex: 1;
   display: flex;
-  justify-content: space-between;
-  align-items: flex-start;
+  flex-direction: row;
+  align-items: stretch;
+  overflow: hidden;
 }

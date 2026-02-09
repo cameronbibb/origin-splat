@@ -36,17 +36,19 @@ const Bin = () => {
 
   return (
     <>
-      <div className="banner">
-        <img src={banner_logo} alt="Origin*" className="logo_banner" />
-      </div>
-      <EndpointHeader binPath={bin_path} />
-      <div className="bin_container">
-        <RequestList
-          requests={requestList}
-          setSelectedRequest={setSelectedRequest}
-        />
-        <div>
-          {selectedRequest && <RequestDetails request={selectedRequest} />}
+      <div className="bin_page">
+        <div className="banner">
+          <img src={banner_logo} alt="Origin*" className="logo_banner" />
+        </div>
+        <EndpointHeader binPath={bin_path} />
+        <div className="bin_container">
+          <RequestList
+            requests={requestList}
+            setSelectedRequest={setSelectedRequest}
+          />
+          <div className="bin_details">
+            {selectedRequest && <RequestDetails request={selectedRequest} />}
+          </div>
         </div>
       </div>
     </>

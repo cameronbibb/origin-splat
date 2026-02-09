@@ -2,7 +2,7 @@ import helpers from "../../services";
 import "./RequestLine.css";
 
 const RequestLine = ({ request, setSelectedRequest }) => {
-  // const path = helpers.removeBinFromPath(request.http_path);
+  const path = helpers.removeBinFromPath(request.http_path);
   const method = request.http_method;
   const time = request.received_at;
 
@@ -20,14 +20,15 @@ const RequestLine = ({ request, setSelectedRequest }) => {
   };
 
   return (
-    <a href="#" onClick={onClick}>
-      <li className="request_line">
-        <span className="request_line_time">
+    <li>
+      <a href="#" onClick={onClick} className="request_line">
+        <div className="request_line_time">
           {convertDbTimetoDateObj(time).toLocaleTimeString()}
-        </span>{" "}
-        <span className="request_line_method">{method}</span>
-      </li>
-    </a>
+        </div>
+        <div className={`request_line_method method-${method.toLowerCase()}`}>{method}</div>
+        <div className="request_line_path">{path}</div>
+      </a>
+    </li>
   );
 };
 
