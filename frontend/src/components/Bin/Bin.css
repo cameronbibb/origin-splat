@@ -24,3 +24,11 @@
   align-items: stretch;
   overflow: hidden;
 }
+
+.bin_details {
+  display: flex;
+  width: 70%;
+  background-color: #f9fcff;
+  position: relative;
+  z-index: 1;
+}

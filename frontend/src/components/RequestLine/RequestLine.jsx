@@ -25,7 +25,9 @@ const RequestLine = ({ request, setSelectedRequest }) => {
         <div className="request_line_time">
           {convertDbTimetoDateObj(time).toLocaleTimeString()}
         </div>
-        <div className={`request_line_method method-${method.toLowerCase()}`}>{method}</div>
+        <div className={`request_line_method method-${method.toLowerCase()}`}>
+          {method}
+        </div>
         <div className="request_line_path">{path}</div>
       </a>
     </li>
