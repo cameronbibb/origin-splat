@@ -1,0 +1,99 @@
+.body-container {
+  display: flex;
+  flex-direction: row;
+  align-items: stretch;
+  border-bottom: 1px solid rgb(230, 230, 230);
+}
+
+.body-title {
+  display: flex;
+  flex-direction: row;
+  justify-content: flex-end;
+  padding: 10px;
+  border-right: 1px solid rgb(230, 230, 230);
+  min-width: 90px;
+  color: rgb(130, 130, 130);
+  font-size: 14px;
+}
+
+.body-display-container {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+}
+
+.body-toggle-container {
+  display: flex;
+  flex-direction: row;
+  width: 100%;
+  height: 50px;
+  border-bottom: 2px solid rgb(230, 230, 230);
+  
+}
+
+.body-toggle {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+  padding: 10px 20px 10px 20px;
+  color: rgb(130, 130, 130);
+  font-size: 14px;
+  gap: 10px;
+  cursor: pointer;
+  font-weight: ;
+}
+
+.selected {
+  color: var(--primary-color);
+  background-color: #f9f5fb;
+}
+
+/* .body-toggle > div:first-child {
+  flex: 1;
+  min-width: 0;
+} */
+
+.body-toggle span {
+  margin-right: 8px;
+}
+
+.copy-link {
+  color: #2563eb;
+  cursor: pointer;
+  margin-right: 0;
+  flex-shrink: 0;
+  white-space: nowrap;
+}
+
+.copy-link:hover {
+  color: #1d4ed8;
+}
+
+/* .headers-list {
+  display: flex;
+  flex-direction: column;
+  padding: 10px;
+  font-size: 14px;
+}
+
+.header-row {
+  display: flex;
+  flex-direction: row;
+}
+
+.header-header {
+  display: flex;
+  font-weight: bold;
+  min-width: 300px;
+  flex-shrink: 0;
+}
+
+.header-value {
+  display: flex;
+  flex: 1;
+  min-width: 0;
+  word-break: break-all;
+  overflow-wrap: break-word;
+} */
+

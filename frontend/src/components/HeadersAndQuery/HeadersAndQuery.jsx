@@ -28,7 +28,7 @@ const HeadersAndQuery = ({ obj, type }) => {
   return (
     <div className="headers-and-query-container">
       <div className="headers-title">{type}</div>
-      <div className="headers-headers">
+      <div className="headers-display">
         <div className="headers-toggle" onClick={toggleHeaders}>
           <div>
             <span>{displayHeaders ? "▼" : "▶"}</span>({array.length}) headers
