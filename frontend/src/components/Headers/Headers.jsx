@@ -1,7 +1,7 @@
 import { useState } from "react";
-import "./HeadersAndQuery.css";
+import "./Headers.css";
 
-const HeadersAndQuery = ({ obj, type }) => {
+const Headers = ({ obj, type }) => {
   const array = Object.entries(obj);
 
   const [displayHeaders, setDisplayHeaders] = useState(false);
@@ -26,7 +26,7 @@ const HeadersAndQuery = ({ obj, type }) => {
   };
 
   return (
-    <div className="headers-and-query-container">
+    <div className="headers-container">
       <div className="headers-title">{type}</div>
       <div className="headers-display">
         <div className="headers-toggle" onClick={toggleHeaders}>
@@ -60,4 +60,4 @@ const HeadersAndQuery = ({ obj, type }) => {
   );
 };
 
-export default HeadersAndQuery;
+export default Headers;
