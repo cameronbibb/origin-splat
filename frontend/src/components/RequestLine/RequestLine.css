@@ -5,15 +5,16 @@
   display: flex;
   align-items: stretch;
   text-decoration: none;
+  font-weight: 600;
 }
 
 .request_line:hover {
   background-color: #F3EAF8;
-  font-weight:400;
 }
 
 .request_line.selected {
   background-color: #F3EAF8;
+  font-weight: bolder;
 }
 
 .request_line_time {
@@ -34,7 +35,6 @@
   display: flex;
   align-items: center;
   justify-content: flex-start;
-  font-weight: 600;
   font-size: 14px;
 }
 
@@ -43,7 +43,6 @@
   align-items: center;
   justify-content: flex-start;
   padding-left: 20px;
-  font-weight: 600;
   font-size: 14px;
   color: black;
 }
