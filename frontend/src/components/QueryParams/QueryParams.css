@@ -49,28 +49,25 @@
 }
 
 .query-params-list {
-  display: flex;
-  flex-direction: column;
+  display: table;
   padding: 10px;
   font-size: 14px;
+  border-spacing: 0 0; /* controls gap between rows */
 }
 
 .query-params-row {
-  display: flex;
-  flex-direction: row;
+  display: table-row;
 }
 
 .query-params-header {
-  display: flex;
+  display: table-cell;
   font-weight: bold;
-  min-width: 300px;
-  flex-shrink: 0;
+  white-space: nowrap;
+  padding-right: 20px; /* gap between columns */
 }
 
 .query-params-value {
-  display: flex;
-  flex: 1;
-  min-width: 0;
+  display: table-cell;
   word-break: break-all;
   overflow-wrap: break-word;
 }
