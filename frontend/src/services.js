@@ -25,9 +25,16 @@ function removeBinFromPath(path) {
   return relevantPath;
 }
 
+function convertDbTimetoDateObj(databaseTime) {
+  databaseTime =
+    databaseTime.slice(0, 10) + "T" + databaseTime.slice(11, 23) + "Z";
+  return new Date(databaseTime);
+}
+
 export default {
   createBin,
   getRequestList,
   getRequest,
   removeBinFromPath,
+  convertDbTimetoDateObj,
 };

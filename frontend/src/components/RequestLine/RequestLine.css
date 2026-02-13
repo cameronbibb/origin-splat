@@ -12,6 +12,10 @@
   font-weight:400;
 }
 
+.request_line.selected {
+  background-color: #F3EAF8;
+}
+
 .request_line_time {
   min-width: 90px;
   font-size: 12px;

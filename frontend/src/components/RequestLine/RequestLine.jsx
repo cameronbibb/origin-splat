@@ -1,29 +1,33 @@
 import helpers from "../../services";
 import "./RequestLine.css";
 
-const RequestLine = ({ request, setSelectedRequest }) => {
+const RequestLine = ({
+  request,
+  setSelectedRequest,
+  setSelectedRequestID,
+  selectedRequestID,
+}) => {
   const path = helpers.removeBinFromPath(request.http_path);
   const method = request.http_method;
   const time = request.received_at;
 
-  function convertDbTimetoDateObj(databaseTime) {
-    databaseTime =
-      databaseTime.slice(0, 10) + "T" + databaseTime.slice(11, 23) + "Z";
-    return new Date(databaseTime);
-  }
-
   const onClick = async (event) => {
     event.preventDefault();
     const req = await helpers.getRequest(request.id);
-    req.date = convertDbTimetoDateObj(time);
+    req.date = helpers.convertDbTimetoDateObj(time);
     setSelectedRequest(req);
+    setSelectedRequestID(request.id);
   };
 
   return (
     <li>
-      <a href="#" onClick={onClick} className="request_line">
+      <a
+        href="#"
+        onClick={onClick}
+        className={`request_line ${selectedRequestID === request.id ? "selected" : ""}`}
+      >
         <div className="request_line_time">
-          {convertDbTimetoDateObj(time).toLocaleTimeString()}
+          {helpers.convertDbTimetoDateObj(time).toLocaleTimeString()}
         </div>
         <div className={`request_line_method method-${method.toLowerCase()}`}>
           {method}

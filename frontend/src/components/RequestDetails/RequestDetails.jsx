@@ -5,17 +5,6 @@ import Body from "../Body/Body";
 import "./RequestDetails.css";
 
 const RequestDetails = ({ request }) => {
-  // console.log(Object.entries(request.payload));
-
-  /*
-
-Shared details component(Method Path Time)
-Header component
-QueryParams component (if exists)
-Body component (if exists)
-
-*/
-
   return (
     <div className="request-details-container">
       <SharedDetails request={request} />

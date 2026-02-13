@@ -1,7 +1,12 @@
 import RequestLine from "../RequestLine/RequestLine";
 import "./RequestList.css";
 
-const RequestList = ({ requests, setSelectedRequest }) => {
+const RequestList = ({
+  requests,
+  setSelectedRequest,
+  setSelectedRequestID,
+  selectedRequestID,
+}) => {
   return (
     <div className="request-nav">
       <div className="request-options">
@@ -15,6 +20,8 @@ const RequestList = ({ requests, setSelectedRequest }) => {
               key={req.id}
               request={req}
               setSelectedRequest={setSelectedRequest}
+              setSelectedRequestID={setSelectedRequestID}
+              selectedRequestID={selectedRequestID}
             />
           );
         })}

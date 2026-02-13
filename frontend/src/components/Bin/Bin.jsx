@@ -12,13 +12,14 @@ const Bin = () => {
   const { bin_path } = useParams();
   const [requestList, setRequestList] = useState([]);
   const [selectedRequest, setSelectedRequest] = useState(null);
+  const [selectedRequestID, setSelectedRequestID] = useState(null);
 
   useEffect(() => {
     socket.emit("joinBinRoom", bin_path);
 
     const requestDetails = async () => {
       const list = await helpers.getRequestList(bin_path);
-      setRequestList(list);
+      await setRequestList(list);
     };
     requestDetails();
 
@@ -34,6 +35,19 @@ const Bin = () => {
     };
   }, [bin_path]);
 
+  useEffect(() => {
+    const selectFirstRequest = async () => {
+      if (requestList.length > 0 && !selectedRequest) {
+        const req = await helpers.getRequest(requestList[0].id);
+        req.date = helpers.convertDbTimetoDateObj(requestList[0].received_at);
+        setSelectedRequest(req);
+        setSelectedRequestID(requestList[0].id);
+      }
+    };
+
+    selectFirstRequest();
+  }, [requestList, selectedRequest]);
+
   return (
     <>
       <div className="bin_page">
@@ -45,6 +59,8 @@ const Bin = () => {
           <RequestList
             requests={requestList}
             setSelectedRequest={setSelectedRequest}
+            setSelectedRequestID={setSelectedRequestID}
+            selectedRequestID={selectedRequestID}
           />
           <div className="bin_details">
             {selectedRequest && <RequestDetails request={selectedRequest} />}
