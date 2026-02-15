@@ -55,7 +55,7 @@ async function createRequest(binId, mongoId, httpMethod, httpPath) {
 
 async function getAllRequestsInBin(binPath) {
   const binId = await getBinId(binPath);
-  const text = 'SELECT * FROM requests WHERE bin_id = $1';
+  const text = 'SELECT * FROM requests WHERE bin_id = $1 ORDER BY received_at DESC';
   const value = [binId];
   try {
     const response = await pool.query(text, value);
