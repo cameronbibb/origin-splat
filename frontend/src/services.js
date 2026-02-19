@@ -26,10 +26,12 @@ function removeBinFromPath(path) {
 }
 
 function convertDbTimetoDateObj(databaseTime) {
-  console.log("convertDBTime called");
   databaseTime =
     databaseTime.slice(0, 10) + "T" + databaseTime.slice(11, 23) + "Z";
-  return new Date(databaseTime);
+  const dateObj = new Date(databaseTime);
+  console.log(dateObj);
+  return dateObj;
+  // return new Date(databaseTime);
 }
 
 async function deleteRequest(binPath, requestId) {
@@ -42,6 +44,32 @@ async function deleteAllRequests(binPath) {
   return result.status;
 }
 
+function groupRequestsByDate(requestsList) {
+  if (requestsList.length === 0) return [];
+  const groupedRequests = [];
+  let currentRequestGroup = {
+    dateReceived: requestsList[0].received_at.toLocaleDateString(),
+    requests: [],
+  };
+
+  for (let i = 0; i < requestsList.length; i++) {
+    if (
+      requestsList[i].received_at.toLocaleDateString() !==
+      currentRequestGroup.dateReceived
+    ) {
+      groupedRequests.push(currentRequestGroup);
+      currentRequestGroup = {
+        dateReceived: requestsList[i].received_at.toLocaleDateString(),
+        requests: [],
+      };
+    }
+    currentRequestGroup.requests.push(requestsList[i]);
+  }
+
+  groupedRequests.push(currentRequestGroup);
+  return groupedRequests;
+}
+
 export default {
   createBin,
   getRequestList,
@@ -50,4 +78,5 @@ export default {
   convertDbTimetoDateObj,
   deleteRequest,
   deleteAllRequests,
+  groupRequestsByDate,
 };

@@ -1,7 +1,7 @@
 import { socket } from "../../socket";
 import EndpointHeader from "../EndpointHeader/EndpointHeader";
 import { useParams } from "react-router-dom";
-import { useState, useEffect } from "react";
+import { useState, useEffect, useMemo } from "react";
 import helpers from "../../services";
 import RequestList from "../RequestList/RequestList";
 import RequestDetails from "../RequestDetails/RequestDetails";
@@ -75,6 +75,11 @@ const Bin = () => {
 
     selectFirstRequest();
   }, [requestList, selectedRequest]);
+
+  const groupedRequests = useMemo(
+    () => helpers.groupRequestsByDate(requestList),
+    [requestList],
+  );
 
   return (
     <>
