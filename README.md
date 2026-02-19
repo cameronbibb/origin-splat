@@ -1,3 +1,5 @@
 # README #
 
-Repository for Capstone request bin project.
+Origin
+
+A request bin clone.
