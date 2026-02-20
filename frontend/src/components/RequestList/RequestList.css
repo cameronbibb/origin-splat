@@ -1,7 +1,6 @@
 .request-nav {
   box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
   width: 30%;
-  padding-top: 10px;
   display: flex;
   flex-direction: column;
   position: relative;
@@ -11,7 +10,45 @@
 }
 
 .request-options {
+  display: flex;
   flex-shrink: 0;
+  padding: 10px;
+  flex-direction: row;
+}
+
+.request-search-wrapper {
+  display: flex;
+  box-shadow: inset 0 2px 10px rgba(0, 0, 0, 0.1);
+  border-radius: 5px;
+  padding: 5px;
+  flex: 1;
+  align-items: center;
+}
+
+.request-search-wrapper:focus-within {
+  box-shadow:
+    inset 0 2px 10px rgba(0, 0, 0, 0.1),
+    0 0 4px var(--primary-color);
+}
+
+.request-search-wrapper:focus-within .search-icon {
+  color: var(--primary-color);
+}
+
+.search-icon {
+  color: rgb(130, 130, 130);
+}
+
+.request-search {
+  border: none;
+  padding-left: 5px;
+  outline: none;
+  background: none;
+  flex: 1;
+}
+
+.request-search::-webkit-search-cancel-button {
+  display: none;
 }
 
 .request-header {

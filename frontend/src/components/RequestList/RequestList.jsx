@@ -3,7 +3,7 @@ import ConfirmModal from "../ConfirmModal/ConfirmModal";
 import { useState } from "react";
 import "./RequestList.css";
 import helpers from "../../services";
-import { FaTrash } from "react-icons/fa";
+import { FaSearch, FaTrash } from "react-icons/fa";
 
 const RequestList = ({
   requests,
@@ -24,15 +24,18 @@ const RequestList = ({
   return (
     <div className="request-nav">
       <div className="request-options">
-        <input
-          type="search"
-          name="requestSearch"
-          className="request-search"
-          value={searchTerm}
-          onChange={(e) => setSearchTerm(e.target.value)}
-          placeholder="Type to search..."
-          aria-label="Search requests"
-        />
+        <div className="request-search-wrapper">
+          <FaSearch className="search-icon" />
+          <input
+            type="search"
+            name="requestSearch"
+            className="request-search"
+            value={searchTerm}
+            onChange={(e) => setSearchTerm(e.target.value)}
+            placeholder="Type to search..."
+            aria-label="Search requests"
+          />
+        </div>
       </div>
       <ul className="request-list">
         {requests.map((reqGroup) => {
