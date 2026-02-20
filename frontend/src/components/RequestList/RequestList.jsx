@@ -10,6 +10,8 @@ const RequestList = ({
   setSelectedRequest,
   setSelectedRequestID,
   selectedRequestID,
+  searchTerm,
+  setSearchTerm,
   binPath,
 }) => {
   const [showDeleteModal, setShowDeleteModal] = useState(false);
@@ -22,7 +24,15 @@ const RequestList = ({
   return (
     <div className="request-nav">
       <div className="request-options">
-        Options go here for live/pause and search
+        <input
+          type="search"
+          name="requestSearch"
+          className="request-search"
+          value={searchTerm}
+          onChange={(e) => setSearchTerm(e.target.value)}
+          placeholder="Type to search..."
+          aria-label="Search requests"
+        />
       </div>
       <ul className="request-list">
         {requests.map((reqGroup) => {

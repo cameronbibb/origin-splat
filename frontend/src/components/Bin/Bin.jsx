@@ -13,6 +13,7 @@ const Bin = () => {
   const [requestList, setRequestList] = useState([]);
   const [selectedRequest, setSelectedRequest] = useState(null);
   const [selectedRequestID, setSelectedRequestID] = useState(null);
+  const [searchTerm, setSearchTerm] = useState("");
 
   useEffect(() => {
     socket.emit("joinBinRoom", bin_path);
@@ -80,10 +81,18 @@ const Bin = () => {
     selectFirstRequest();
   }, [requestList, selectedRequest]);
 
-  const groupedRequests = useMemo(
-    () => helpers.groupRequestsByDate(requestList),
-    [requestList],
-  );
+  const groupedRequests = useMemo(() => {
+    const filteredRequestList = requestList.filter((request) => {
+      return (
+        helpers
+          .removeBinFromPath(request.http_path)
+          .toLowerCase()
+          .includes(searchTerm.toLowerCase()) ||
+        request.http_method.toLowerCase().includes(searchTerm.toLowerCase())
+      );
+    });
+    return helpers.groupRequestsByDate(filteredRequestList);
+  }, [requestList, searchTerm]);
 
   return (
     <>
@@ -98,6 +107,8 @@ const Bin = () => {
             setSelectedRequest={setSelectedRequest}
             setSelectedRequestID={setSelectedRequestID}
             selectedRequestID={selectedRequestID}
+            searchTerm={searchTerm}
+            setSearchTerm={setSearchTerm}
             binPath={bin_path}
           />
           <div className="bin_details">
