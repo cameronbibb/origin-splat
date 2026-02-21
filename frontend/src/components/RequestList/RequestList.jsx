@@ -22,7 +22,7 @@ const RequestList = ({
   };
 
   return (
-    <div className="request-nav">
+    <nav className="request-nav">
       <div className="request-options">
         <div className="request-search-wrapper">
           <FaSearch className="search-icon" />
@@ -84,7 +84,7 @@ const RequestList = ({
           />
         </>
       )}
-    </div>
+    </nav>
   );
 };
 

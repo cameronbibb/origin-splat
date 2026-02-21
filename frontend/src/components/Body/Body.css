@@ -45,7 +45,7 @@
 
 .selected {
   color: var(--primary-color);
-  background-color: #F3EAF8;
+  background-color: #f3eaf8;
 }
 
 .body-toggle span {
@@ -66,4 +66,9 @@
 
 .body-display {
   padding: 10px;
+}
+
+pre {
+  white-space: pre-wrap;
+  word-break: break-all;
 }

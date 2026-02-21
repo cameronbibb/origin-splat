@@ -97,9 +97,9 @@ const Bin = () => {
   return (
     <>
       <div className="bin_page">
-        <div className="banner">
+        <header className="banner">
           <img src={banner_logo} alt="Origin*" className="logo_banner" />
-        </div>
+        </header>
         <EndpointHeader binPath={bin_path} />
         <div className="bin_container">
           <RequestList
@@ -111,7 +111,7 @@ const Bin = () => {
             setSearchTerm={setSearchTerm}
             binPath={bin_path}
           />
-          <div className="bin_details">
+          <main className="bin_details">
             {!selectedRequest && (
               <div className="get-started-instructions">
                 <h3>No requests yet</h3>
@@ -124,7 +124,7 @@ const Bin = () => {
               </div>
             )}
             {selectedRequest && <RequestDetails request={selectedRequest} />}
-          </div>
+          </main>
         </div>
       </div>
     </>
