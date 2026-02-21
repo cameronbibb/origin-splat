@@ -51,6 +51,15 @@
   display: none;
 }
 
+.no-requests-message {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: rgb(130, 130, 130);
+  font-weight: 600;
+  flex: stretch;
+}
+
 .request-header {
   display: flex;
   padding: 10px;

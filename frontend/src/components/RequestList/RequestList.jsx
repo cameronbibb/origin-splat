@@ -37,28 +37,34 @@ const RequestList = ({
           />
         </div>
       </div>
-      <ul className="request-list">
-        {requests.map((reqGroup) => {
-          const requestDate = helpers.getRequestDate(reqGroup.dateReceived);
-          return (
-            <div key={reqGroup.dateReceived}>
-              <div className="request-header">{requestDate}</div>
-              {reqGroup.requests.map((req) => {
-                return (
-                  <RequestLine
-                    key={req.id}
-                    request={req}
-                    setSelectedRequest={setSelectedRequest}
-                    setSelectedRequestID={setSelectedRequestID}
-                    selectedRequestID={selectedRequestID}
-                    binPath={binPath}
-                  />
-                );
-              })}
-            </div>
-          );
-        })}
-      </ul>
+
+      {requests.length === 0 && (
+        <div className="no-requests-message">No Requests</div>
+      )}
+      {requests.length > 0 && (
+        <ul className="request-list">
+          {requests.map((reqGroup) => {
+            const requestDate = helpers.getRequestDate(reqGroup.dateReceived);
+            return (
+              <div key={reqGroup.dateReceived}>
+                <div className="request-header">{requestDate}</div>
+                {reqGroup.requests.map((req) => {
+                  return (
+                    <RequestLine
+                      key={req.id}
+                      request={req}
+                      setSelectedRequest={setSelectedRequest}
+                      setSelectedRequestID={setSelectedRequestID}
+                      selectedRequestID={selectedRequestID}
+                      binPath={binPath}
+                    />
+                  );
+                })}
+              </div>
+            );
+          })}
+        </ul>
+      )}
       {requests.length > 0 && (
         <>
           <div
