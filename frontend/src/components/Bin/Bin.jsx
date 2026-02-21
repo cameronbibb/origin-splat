@@ -112,6 +112,17 @@ const Bin = () => {
             binPath={bin_path}
           />
           <div className="bin_details">
+            {!selectedRequest && (
+              <div className="get-started-instructions">
+                <h3>No requests yet</h3>
+                <p>Send a request to your endpoint to get started:</p>
+                <code>
+                  curl -X POST {import.meta.env.VITE_API_URL}
+                  /api/endpoints/{bin_path}
+                </code>
+                <p>Requests will appear here in real time.</p>
+              </div>
+            )}
             {selectedRequest && <RequestDetails request={selectedRequest} />}
           </div>
         </div>

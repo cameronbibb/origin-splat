@@ -7,7 +7,7 @@
 .banner {
   height: 40px;
   width: 100%;
-  background-color: #852DB5;
+  background-color: #852db5;
   align-items: center;
   display: flex;
   padding-left: 10px;
@@ -15,6 +15,14 @@
 
 .banner img {
   width: 100px;
+}
+
+.get-started-instructions {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  font-weight: 600;
 }
 
 .bin_container {
